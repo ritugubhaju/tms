@@ -20,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'Dashboard\DashboardController@index')->name('index');
+Route::get('teacher/create', 'Dashboard\DashboardController@create')->name('teacher.create');
+Route::post('teacher/store', 'Dashboard\DashboardController@store')->name('teacher.store');

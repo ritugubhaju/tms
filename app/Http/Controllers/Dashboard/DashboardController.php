@@ -13,4 +13,13 @@ class DashboardController extends Controller
         return view('index');
     }
 
+    public function create()
+    {
+        return view('teacher.create');
+    }
+
+    public function store(Request $request)
+    {
+       
+    }
 }
