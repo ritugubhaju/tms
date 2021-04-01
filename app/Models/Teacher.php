@@ -13,7 +13,8 @@ class Teacher extends Model
         'email',
         'address',
         'nationality',
-        'dob',
-        'faculty'
+        'dob'
     ];
+
+
 }
