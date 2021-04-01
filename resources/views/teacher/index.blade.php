@@ -11,76 +11,71 @@
     {{-- Datatable Css --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 
-    <title>Teacher Module Management System</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">
+
+
+    <title>Teacher Managment System</title>
   </head>
   <body>
-  <section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1>Teacher Management System</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Teachers Information</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <a type="button" class="btn  btn-success float-sm-right" href="{{ route('teacher.create') }}"> Add Teacher</a>
-                    </div>
-                    <div class="card-body">
-                    <table id="table_id" class="display">
-                        <thead class="thead-dark">
-                            <tr>
-                              <th scope="col">S.N</th>
-                              <th scope="col">Lecture Name</th>
-                              <th scope="col">Gender</th>
-                              <th scope="col">Phone</th>
-                              <th scope="col">Email Id</th>
-                              <th scope="col">Address</th>
-                              <th scope="col">Nationailty</th>
-                              <th scope="col">DOB</th>
-                              <th scope="col">Faculty</th>
-                              <th scope="col">Faculty Modules</th>
-                            </tr>
-                          </thead>
-                        <tbody>
-                          
-                        </tbody>
-                    </table>
+    <table id="table_id" class="display">
+        <thead class="thead-dark">
+            <tr>
+                <a href="{{route('teacher.create')}}" class="btn btn-primary">Create New</a>
+            </tr>
+            <tr>
+              <th scope="col">Lecture Name</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Email Id</th>
+              <th scope="col">Address</th>
+              <th scope="col">Nationailty</th>
+              <th scope="col">DOB</th>
+              <th scope="col">Faculty</th>
+            </tr>
+          </thead>
+        <tbody>
+            @foreach($teachers as $teacherdata)
+                <tr>
+                    <td>{{$teacherdata->name}}</td>
+                    <td>{{$teacherdata->gender}}</td>
+                    <td>{{$teacherdata->phone}}</td>
+                    <td>{{$teacherdata->email}}</td>
+                    <td>{{$teacherdata->address}}</td>
+                    <td>{{$teacherdata->nationality}}</td>
+                    <td>{{$teacherdata->DOB}}</td>
+                    <td>{{$teacherdata->faculty}}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 
-                    </div>
 
-                </div>
-            </div>
-        </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <!-- /.row -->
-    </div><!-- /.container-fluid -->
-</section>
+    {{-- datatable --}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
- <!-- Optional JavaScript -->
- <!-- jQuery first, then Popper.js, then Bootstrap JS -->
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
- {{-- datatable --}}
- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
- <script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.4.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.4.1/js/buttons.flash.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.4.1/js/buttons.html5.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.4.1/js/buttons.print.min.js"></script>
+
+    <script>
         $(document).ready( function () {
-            $('#table_id').DataTable();
-        } );
-</script>
-</body>
+            $('#table_id').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'csv', 'excel', 'pdf'
+                ]
+            });
+        });
+    </script>
+  </body>
 </html>

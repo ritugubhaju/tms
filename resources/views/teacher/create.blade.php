@@ -40,15 +40,13 @@
 
             <!-- /.card-header -->
             <div class="card-body">
-                <form role="form" action="{{ route('teacher.store') }}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{route('create.submit')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
                      <div class="form-group">
                           <label for="name">Lecturer's Name:</label>
                           <input type="text" name="name" class="form-control" placeholder="Name">
-                          @if ($errors->has('name'))
-                                <span class="text-danger">{{ $errors->first('name') }}</span>
-                          @endif
+                         
                      </div>
                     
                      <div class="form-group">
@@ -59,49 +57,37 @@
                             <label for="female">Female</label><br>
                             <input type="radio" id="other" name="gender" value="other">
                             <label for="other">Other</label>
-                            @if ($errors->has('gender'))
-                                <span class="text-danger">{{ $errors->first('gender') }}</span>
-                            @endif
+                            
                      </div>
 
                      <div class="form-group">
                         <label for="phone">Phone:</label>
                         <input type="text" name="phone" class="form-control" required>
-                        @if ($errors->has('phone'))
-                                <span class="text-danger">{{ $errors->first('phone') }}</span>
-                         @endif
+                      
                       </div>
 
                      <div class="form-group">
                           <label for="email">Email id:</label>
                           <input type="email" name="email" class="form-control" required>
-                          @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                         @endif
+                         
                      </div>
 
                      <div class="form-group">
                         <label for="address">Address:</label>
                         <input type="text" name="address" class="form-control" required>
-                        @if ($errors->has('address'))
-                                <span class="text-danger">{{ $errors->first('address') }}</span>
-                         @endif
+                       
                     </div>
 
                      <div class="form-group">
                           <label for="nationality">Nationality:</label>
                           <input type="text" name="nationality" class="form-control" required>
-                          @if ($errors->has('nationality'))
-                                <span class="text-danger">{{ $errors->first('nationality') }}</span>
-                         @endif
+                         
                      </div>
 
                      <div class="form-group">
                           <label for="dob">DOB:</label>
-                          <input type="date" name="dob" class="form-control" required>
-                          @if ($errors->has('dob'))
-                                <span class="text-danger">{{ $errors->first('dob') }}</span>
-                         @endif
+                          <input type="date" name="DOB" class="form-control" required>
+                        
                      </div>
                      
                     <div class="form-group">
@@ -132,7 +118,7 @@
                     </div>
 
 
-                     <button type="submit" class="btn btn-success">Add Teacher</button>
+                    <button class="submit btn-primary" type="submit">Submit</button>
                 </form>
             </div>
             <!-- /.card-body -->

@@ -21,4 +21,4 @@ Auth::routes();
 
 Route::get('', 'Dashboard\DashboardController@index')->name('teacher.index');
 Route::get('teacher/create', 'Dashboard\DashboardController@create')->name('teacher.create');
-Route::post('teacher/store', 'Dashboard\DashboardController@store')->name('teacher.store');
+Route::post('teacher/submit', 'Dashboard\DashboardController@store')->name('create.submit');

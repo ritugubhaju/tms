@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Teacher;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,7 +12,9 @@ class DashboardController extends Controller
     public function index()
     {
      
-        return view('teacher.index');
+        //  dd($request->all());
+        $teachers = Teacher::get();
+        return view('teacher.index',compact('teachers'));
     }
 
     public function create()
@@ -19,18 +22,16 @@ class DashboardController extends Controller
         return view('teacher.create');
     }
 
-    public function store(Request $request)
+    public function store( Request $request)
     {
-
+       
         $this->validate($request, [
-            'name'          => 'required|string',
-            'gender'        => 'required|string',
-            'phone'         => 'required|digits:10',
-            'email'         => 'required|email',
-            'address'       => 'required|string',
-            'nationality'   => 'required|string',
-            'dob'           => 'required|date',
+            'name'          => 'required',
+          
+            'email'         => 'required',
+           
         ]);
+        // dd($request->all());
         $input = $request->except('subject');
         $createteacher = Teacher::create($input);
         $subjects = [];
