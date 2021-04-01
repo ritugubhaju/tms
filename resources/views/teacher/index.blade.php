@@ -17,12 +17,19 @@
     <title>Teacher Managment System</title>
   </head>
   <body>
-
+  <section class="content-header">
+     <div class="row">
+          <div class="col-md-12">
+               <div class="pull-right">
+                    <a type="button" class="btn btn-info btn-lg btn-flat " href="{{route('teacher.create')}}">Add
+                            Teacher</a>
+               </div>
+          </div>
+     </div>
+</section>
     <table id="table_id" class="display">
         <thead class="thead-dark">
-            <tr>
-                <a href="{{route('teacher.create')}}" class="btn btn-primary">Create New</a>
-            </tr>
+           
             <tr>
               <th scope="col">Lecture Name</th>
               <th scope="col">Gender</th>

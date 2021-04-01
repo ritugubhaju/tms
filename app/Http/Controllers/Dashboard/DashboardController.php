@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function index()
     {
      
-        //  dd($request->all());
+        
         $teachers = Teacher::get();
         return view('teacher.index',compact('teachers'));
     }
@@ -26,10 +26,14 @@ class DashboardController extends Controller
     {
        
         $this->validate($request, [
-            'name'          => 'required',
-          
-            'email'         => 'required',
-           
+            'name' => 'required',
+            'gender' => 'required',
+            'phone' => 'required|min:10|numeric',
+            'email' => 'required|email',
+            'nationality' => 'required',
+            'DOB' => 'required',
+            'faculty' => 'required'
+                   
         ]);
         // dd($request->all());
         $input = $request->except('subject');
